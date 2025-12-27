@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+</head>
+
+<body>
+    <h1>Welcome to My App</h1>
+    <div id="latestElement"></div>
+
+    <script>
+        // Establish a WebSocket connection
+        const ws = new WebSocket('ws://localhost:1000');
+
+        // Handle WebSocket messages
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            const latestElementDiv = document.getElementById('latestElement');
+            latestElementDiv.innerText = `Latest Element: ${data.latestElement ? data.latestElement.filename : 'Not available'}`;
+        };
+    </script>
+</body>
+
+</html>
