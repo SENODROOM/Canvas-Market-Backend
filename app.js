@@ -14,34 +14,34 @@ app.use(express.json());
 //app.use(express.urlencoded({extended: true}))
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/ArtisticUnleashed").then(()=>{
-    console.log("Database Connected")
-}).catch((e)=>{
-    console.log(e)
-    console.log("Database Can't Be Connected")
+mongoose.connect("mongodb+srv://SaadAmin:Saad23457890()@canvasmarket.cxdgxjd.mongodb.net/").then(() => {
+  console.log("Database Connected")
+}).catch((e) => {
+  console.log(e)
+  console.log("Database Can't Be Connected")
 })
 
 
 
-app.post('/submit', cors(),async (req, res) => {
+app.post('/submit', cors(), async (req, res) => {
 
   console.log(req.body);
 
-    const userData = new User(req.body);
-    let requestStore = await userData.save();
+  const userData = new User(req.body);
+  let requestStore = await userData.save();
 
-    res.status(200).json({ message: "Message sent successfully" });
+  res.status(200).json({ message: "Message sent successfully" });
 
 
 })
-app.post('/Products', cors(),async (req, res) => {
+app.post('/Products', cors(), async (req, res) => {
 
   console.log(req.body);
 
-    const ProductsData = new Products(req.body);
-    let requestStore = await ProductsData.save();
+  const ProductsData = new Products(req.body);
+  let requestStore = await ProductsData.save();
 
-    res.status(200).json({ message: "Message sent successfully" });
+  res.status(200).json({ message: "Message sent successfully" });
 
 
 })
