@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +21,11 @@
   "homepage": "https://github.com/SENODROOM/Canvas-Market-Backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "mongoose": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

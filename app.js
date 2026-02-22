@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
-const port = 5001;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +17,7 @@ const Cart = require('./model/Cart');
 const Order = require('./model/Order');
 
 mongoose
-  .connect('mongodb+srv://SaadAmin:Saad23457890()@canvasmarket.cxdgxjd.mongodb.net/')
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('✅ Database Connected'))
   .catch((e) => console.log('❌ Database Error:', e));
 
