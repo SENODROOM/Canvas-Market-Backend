@@ -17,7 +17,7 @@ const Cart = require('./model/Cart');
 const Order = require('./model/Order');
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ Database Connected'))
   .catch((e) => console.log('❌ Database Error:', e));
 
