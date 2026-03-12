@@ -3,6 +3,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const dns = require('dns');
+dns.setDefaultResultOrder("ipv4first");
+
 const app = express();
 const port = 5000;
 
